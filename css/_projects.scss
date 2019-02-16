@@ -1,0 +1,102 @@
+//=============================================================================
+//	PORTFOLIO
+//=============================================================================
+.portfolio {
+
+	&-projects {
+		display: flex;
+    	flex-direction: column;
+		align-items: center;
+		background-color: $light-gray;
+
+		h1 {
+			@include rem(margin-bottom, 10px);
+		}
+
+		.call-to-action {
+			@include rem(margin, 25px 0);
+		}
+
+		img {
+			height: auto;
+    		width: 100%;
+		}
+	}
+
+	@media only screen and (min-width: 600px) {
+
+		&-item {
+			display: grid;
+			grid-template-columns: 1fr 1fr;
+			@include rem(grid-gap, 15px);
+			max-width: 1100px;
+			@include rem(margin-top, 18px);
+		}
+	}
+
+	@media only screen and (max-width: 600px) {
+
+		&-item {
+			display: flex;
+			flex-wrap: wrap;
+			justify-content: center;
+
+			&:not(:first-of-type){
+				@include rem(margin-top, 50px);
+			}
+
+			.project-preview {
+				order: 1;
+			}
+
+			.project-details {
+				order: 2;
+			}
+		}
+	}
+}
+
+.project-details {
+	display: flex;
+    flex-direction: column;
+	justify-content: center;
+
+	h2 {
+		@include inside-header;
+		line-height: 1.15;
+		font-weight: 300;
+		margin-bottom: 0;
+		color: $dark-blue;
+	}
+
+	a {
+		color: $dark-blue;
+	}
+
+	.technology-used {
+		text-align: center;
+
+		ul {
+			list-style-type: none;
+			margin: 0;
+			padding: 0;
+
+			li {
+				display: inline-block;
+				padding: 5px 10px;
+				margin-right: 5px;
+				margin-bottom: 10px;
+				color: $blue;
+				background: $dark-gray;
+				border-radius: 3px;
+				text-transform: uppercase;
+				@include rem(font-size, 8px);
+				font-family: $code-font;
+
+				a {
+					color: $blue;
+				}
+			}
+		}
+	}
+}

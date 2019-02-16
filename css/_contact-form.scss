@@ -1,0 +1,146 @@
+//=============================================================================
+//	POPUP CONTACT FORM
+//=============================================================================
+.call-to-action-section {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	@include rem(margin-bottom, 25px);
+
+	h1 {
+		color: $dark-blue;
+	}
+
+	label {
+		@include rem(margin-top, 25px);
+	}
+
+	p {
+		@include rem(font-size, 12px);
+	}
+}
+
+.modal {
+	text-align: center;
+
+	&input:focus ~ label {
+		transform: scale(0.97);
+	}
+
+	&_overlay {
+		background: rgba($dark-gray, .95);
+		top: 0;
+		bottom: 0;
+		left: 0;
+		right: 0;
+		position: fixed;
+		z-index: 2;
+		display: flex;
+    	justify-content: center;
+		align-items: center;
+		opacity: 0;
+		transform: scale(0.5);
+		transition: all 0.75s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+		z-index: -1;
+	}
+
+	&_wrap {
+		@include rem(padding, 20px);
+		position: relative;
+		max-width: 500px;
+		height: 100%;
+    	overflow: auto;
+
+		label[for] {
+			color: $white;
+			float: left;
+			@include rem(margin, 10px 0 5px 0);
+			font-weight: 300;
+		}
+
+		label[for="cta_trigger"] {
+			background-color: $red;
+			border-radius: 50%;
+			cursor: pointer;
+			display: inline-block;
+			line-height: 1.75;
+			position: absolute;
+			right: 0;
+			@include rem(height, 20px);
+			@include rem(width, 20px);
+			@include rem(margin, 5px);
+
+			&:hover {
+				background-color: darken($red, 10%);
+			}
+		}
+
+		h2 {
+			color: $blue;
+			@include rem(margin-bottom, 20px);
+			@include rem(font-size, 22px);
+			text-transform: uppercase;
+		}
+
+		p {
+			color: $white;
+			text-shadow: 0 1px 2px rgba($dark-gray, .2);
+			text-align: justify;
+
+			strong {
+				color: $blue;
+				@include rem(font-size, 12px);
+			}
+		}
+
+		input,
+		textarea {
+			margin-top: 1em;
+			display: flex;
+			flex-direction: column;
+			width: 100%;
+			@include rem(padding, 7px 5px);
+			border-radius: 5px;
+
+			&:hover {
+				background-color: darken($white, 10%);
+			}
+		}
+
+		button {
+			@include rem(margin, 20px 0);
+		}
+	}
+}
+
+input #trigger_input,
+#cta_trigger {
+	display: none;
+	position: absolute;
+	top: -1000px;
+}
+
+input:checked ~ .modal_overlay {
+	opacity: 1;
+	-webkit-transform: scale(1);
+	transform: scale(1);
+	z-index: 800;
+}
+
+.error {
+	border: 1px solid $red;
+	box-shadow: 0 2px 2px 0 lighten($red, 10%);
+
+	&-message {
+		color: $red;
+		font-weight: bold;
+		text-align: left;
+		@include rem(font-size, 9px);
+		@include rem(margin-top, 5px);
+	}
+}
+
+.valid {
+	border: 1px solid $green;
+	box-shadow: 0 2px 2px 0 lighten($green, 10%);
+}

@@ -1,0 +1,52 @@
+/* =============================================================================
+	LANDING
+============================================================================= */
+header {
+	background: #4b4b4b url("/images/bg.jpg") no-repeat center;
+	min-height: 100%;
+	background-size: cover;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+
+	.introduction-section {
+		display: flex;
+		flex-direction: column;
+
+		:first-child,
+		:last-child {
+			font-family: $code-font;
+			@include rem(font-size, 36px);
+			color: $blue;
+			text-shadow: 0 1px 2px rgba(0,0,0,0.20);
+
+			@media only screen and (max-width: 620px) {
+				@include rem(font-size, 28px);
+			}
+
+			@media only screen and (max-width: 475px) {
+				@include rem(font-size, 20px);
+				text-align: center;
+			}
+		}
+
+		:nth-of-type(2),
+		:nth-of-type(3) {
+			font-family: $code-font;
+			color: $white;
+			text-shadow: 0 1px 2px rgba(0,0,0,0.20);
+			@include rem(padding-left, 64px);
+			@include rem(font-size, 26px);
+			letter-spacing: 2px;
+
+			@media only screen and (max-width: 620px) {
+				@include rem(font-size, 16px);
+				@include rem(padding-left, 34px);
+			}
+
+			@media only screen and (max-width: 475px) {
+				@include rem(font-size, 12px);
+			}
+		}
+	}
+}
