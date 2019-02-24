@@ -1,5 +1,5 @@
 # portfolio-rewrite
-Removed CSS framework and refactored styles to SCSS. Removed jQuery functionality and converted all functionality to utilize Vanilla JavaScript. 
+Removed CSS framework and refactored styles to SCSS. Removed jQuery functionality and converted all functionality to utilize Vanilla JavaScript. Improved Accessibility by 18%, Best Practices by 20%, SEO by 11%, and Performance from 13% to 33% on Desktop and Mobile Experiences based on Lighthouse Audits.
 
 ## Lighthouse Audits
 
