@@ -58,16 +58,25 @@ footer {
 	p {
 		text-align: center;
 
-		span {
-			@include rem(font-size, 14px);
+		#year {
+			font-size: initial;
+		}
+	}
+
+	.footer-links {
+		list-style-type: none;
+		display: flex;
+		justify-content: center;
+
+		li {
 
 			&:first-child {
 				@include rem(margin-right, 10px);
 			}
 		}
 
-		#year {
-			font-size: initial;
+		span {
+			@include rem(font-size, 14px);
 		}
 	}
 }
